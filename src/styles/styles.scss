@@ -11,6 +11,8 @@ html,
 body {
   font-family: $font;
   font-size: 16px;
+  padding: 0;
+  margin: 0;
 }
 
 .container {
@@ -134,5 +136,108 @@ header {
     text-transform: uppercase;
     position: absolute;
     bottom: 48px;
+  }
+  .fixed-misc {
+    position: fixed;
+    top: 50%;
+    right: -48px;
+    transform: rotate(-90deg);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 1.5px;
+    color: $white;
+    mix-blend-mode: difference;
+    z-index: 8;
+    @media (max-width: 1440px) {
+      right: -96px;
+    }
+  }
+}
+
+//About Blurb
+.about-blurb {
+  padding: 48px 0;
+  background: $white;
+  position: relative;
+  .inner-blurb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .content {
+      width: 33%;
+      @media (max-width: 1440px) {
+        width: 40%;
+      }
+      h3 {
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 1.8rem;
+        letter-spacing: 1.5px;
+        margin: 0;
+      }
+      p {
+        font-size: 1rem;
+        line-height: 2rem;
+        font-weight: 300;
+        margin: 40px 0 72px;
+      }
+      .btn-row {
+        a {
+          font-weight: 700;
+          font-size: 0.875rem;
+          letter-spacing: 1.5px;
+          color: $black;
+          text-transform: uppercase;
+          text-decoration: none;
+        }
+      }
+    }
+    .images {
+      width: 50%;
+      height: 1000px;
+      position: relative;
+      z-index: 7;
+      @media (max-width: 1440px) {
+        height: 800px;
+      }
+      .top-right {
+        position: absolute;
+        width: 460px;
+        top: 0;
+        right: 0;
+        z-index: 4;
+        @media (max-width: 1440px) {
+          width: 360px;
+        }
+      }
+      .top-left {
+        position: absolute;
+        width: 410px;
+        bottom: 0;
+        left: 0;
+        @media (max-width: 1440px) {
+          width: 310px;
+        }
+      }
+    }
+  }
+  .black-box {
+    background: $black;
+    height: 418px;
+    width: 836px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    @media (max-width: 1440px) {
+      width: 636px;
+      height: 340px;
+    }
+    &.overlay {
+      z-index: 7;
+      background: $maroon;
+      mix-blend-mode: overlay;
+    }
   }
 }
